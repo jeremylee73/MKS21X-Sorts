@@ -149,5 +149,17 @@ public class Sorts{
       System.out.println("TEST CASE - FAIL");
     }
 
+    int[] array = {4, 2, 9, 1, 0, -4, 3, 8, 7, 3};
+    System.out.println(printArray(array));
+    Sorts.bubbleSort(array);
+    sorted = printArray(array);
+    System.out.println(sorted);
+
+    if (sorted.equals("[-4, 0, 1, 2, 3, 3, 4, 7, 8, 9]")){
+      System.out.println("TEST CASE - PASS");
+    } else {
+      System.out.println("TEST CASE - FAIL");
+    }
+    
   }
 }
