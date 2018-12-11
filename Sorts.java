@@ -53,6 +53,20 @@ public class Sorts{
     return ans;
   }
 
+  public static void insertionSort(int[] data){
+    for (int i = 1; i < data.length; i++) {
+      int current = data[i];
+      int index = i;
+      for (int j = i - 1; j >= 0; j--) {
+        if (data[j] > current) {
+          data[j+1] = data[j];
+          index = j;
+        }
+        data[index] = current;
+      }
+    }
+  }
+
   public static void main(String[] args) {
 
     // Google random int generator
@@ -160,6 +174,18 @@ public class Sorts{
     } else {
       System.out.println("TEST CASE - FAIL");
     }
-    
+
+    int[] array2 = {4, 2, 9, 1, 0, -4, 3, 8, 7, 3};
+    System.out.println(printArray(array2));
+    Sorts.insertionSort(array2);
+    sorted = printArray(array2);
+    System.out.println(sorted);
+
+    if (sorted.equals("[-4, 0, 1, 2, 3, 3, 4, 7, 8, 9]")){
+      System.out.println("TEST CASE - PASS");
+    } else {
+      System.out.println("TEST CASE - FAIL");
+    }
+
   }
 }
